@@ -3,11 +3,11 @@
 {% block title %}About{% endblock %}
 
 {% block main %}
-    <h2>About: {{product.name}}</h2>
+    <h2>About: {{product.title}}</h2>
         <ul>
             <li>
                 <label>id: </label> {{product.id}} <br />
-                <label>Name: </label> {{product.name}} <br />
+                <label>Name: </label> {{product.title}} <br />
                 <label>Price: $</label> {{product.price}} <br /> <br />
                 <a href='/products/{{ product.id }}/delete'>Delete</a> |
                 <a href='/products/{{ product.id }}/edit'>Edit</a>

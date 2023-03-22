@@ -4,15 +4,20 @@
 
 {% block main %}
     <h2>All Products:</h2>
+
+    {% if products is empty %}
+        <p>No products found.</p>
+    {% else %}
     <ul>
         {% for product in products%}
             <li>
-                Name: {{ product.name }} | Price: ${{ product.price }} -
+                Name: {{ product.title }} | Price: ${{ product.price }} -
                 <a href="/products/{{ product.id }}">Edit</a>
                 <a href="/products/{{ product.id }}/delete">Delete</a>
             </li>
         {% endfor %}
     </ul>
+    {% endif %}
 
     <a href="/products/new">Create New Product</a>
 {% endblock %}
