@@ -12,10 +12,19 @@
             <label for="">Product:</label>
             <select name="productId">
                 {% for product in products %}
-                    <option value="{{ product.id }}" 
-                    {% if products.id == variant.productId %} 
+                    <option 
+                    
+                    value="{{ product.id }}"
+
+                    {% if product.id == variant.productId %}
+
                         selected="selected"
-                    {% endif %}>{{ product.title }}</option>
+
+                    {% endif %}>
+                    
+                        {{ product.title }}
+                        
+                    </option>
                 {% endfor %}
             </select>
         </div>
