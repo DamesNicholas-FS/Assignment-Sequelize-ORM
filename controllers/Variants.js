@@ -1,4 +1,4 @@
-const { Variant } = require('../models');
+const { Variant, Product } = require('../models');
 
 const index = async (req, res) => {
     const variants = await Variant.findAll();
@@ -6,11 +6,12 @@ const index = async (req, res) => {
 }
 
 const form = async (req, res) => {
+    const products = await Product.findAll();
     if (req.params.id) {
         const variant = await Variant.findByPk(req.params.id);
         res.render('views/variants/edit', { variant })
     } else {
-        res.render('views/variants/create')
+        res.render('views/variants/create', { products })
     }
 }
 

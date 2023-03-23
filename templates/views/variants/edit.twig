@@ -3,5 +3,5 @@
 {% block title %}Edit{% endblock %}
 
 {% block main %}
-    {% include 'views/variants/_form.twig' with { 'variant': variant } %}
+    {% include 'views/variants/_form.twig' with { 'variant': variant, 'products': products } %}
 {% endblock %}
