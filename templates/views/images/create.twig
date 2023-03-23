@@ -3,5 +3,5 @@
 {% block title %}New{% endblock %}
 
 {% block main %}
-    {% include 'views/images/_form.twig' %}
+    {% include 'views/images/_form.twig', with { 'variant': variants }  %}
 {% endblock %}

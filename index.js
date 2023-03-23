@@ -10,7 +10,7 @@ app.set('views', __dirname + '/templates');
 app.set('view engine', 'twig');
 
 app.get('/', (req, res) => {
-    res.render('view/home');
+    res.render('views/home');
 });
 
 app.use('/products', productRouter);

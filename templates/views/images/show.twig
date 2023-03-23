@@ -3,12 +3,13 @@
 {% block title %}About{% endblock %}
 
 {% block main %}
-    <h2>About: {{image.title}}</h2>
+    <h2>About Image #: {{image.id}}</h2>
         <ul>
             <li>
                 <label>id: </label> {{image.id}} <br />
-                <label>Name: </label> {{image.title}} <br />
-                <label>Price: $</label> {{image.price}} <br /> <br />
+                <label>Assigned Variant: </label> {{variant.title}} <br /> <br />
+
+                <hr>
                 <a href='/images/{{ image.id }}/delete'>Delete</a> |
                 <a href='/images/{{ image.id }}/edit'>Edit</a>
             </li>

@@ -11,7 +11,7 @@
     <ul>
         {% for image in images%}
             <li>
-                Variant ID: {{ image.variantId }} <br>
+                Image ID: {{ image.id }} <br>
                 <hr>
                 <a href="/images/{{ image.id }}">Edit</a> |
                 <a href="/images/{{ image.id }}/delete">Delete</a>
