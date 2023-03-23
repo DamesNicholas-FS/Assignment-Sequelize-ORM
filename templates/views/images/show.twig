@@ -1,0 +1,18 @@
+{% extends 'layouts/base.twig' %}
+
+{% block title %}About{% endblock %}
+
+{% block main %}
+    <h2>About: {{image.title}}</h2>
+        <ul>
+            <li>
+                <label>id: </label> {{image.id}} <br />
+                <label>Name: </label> {{image.title}} <br />
+                <label>Price: $</label> {{image.price}} <br /> <br />
+                <a href='/images/{{ image.id }}/delete'>Delete</a> |
+                <a href='/images/{{ image.id }}/edit'>Edit</a>
+            </li>
+        </ul>
+
+        
+{% endblock %}

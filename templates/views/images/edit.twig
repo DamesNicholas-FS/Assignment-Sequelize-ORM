@@ -1,0 +1,7 @@
+{% extends 'layouts/base.twig' %}
+
+{% block title %}Edit{% endblock %}
+
+{% block main %}
+    {% include 'views/images/_form.twig' with { 'image': image } %}
+{% endblock %}

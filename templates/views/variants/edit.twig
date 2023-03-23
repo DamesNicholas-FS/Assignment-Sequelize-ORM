@@ -1,0 +1,7 @@
+{% extends 'layouts/base.twig' %}
+
+{% block title %}Edit{% endblock %}
+
+{% block main %}
+    {% include 'views/variants/_form.twig' with { 'variant': variant } %}
+{% endblock %}

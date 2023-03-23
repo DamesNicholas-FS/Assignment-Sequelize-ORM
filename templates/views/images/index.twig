@@ -1,0 +1,25 @@
+{% extends 'layouts/base.twig' %}
+
+{% block title %}All Images{% endblock %}
+
+{% block main %}
+    <h2>All Images:</h2>
+
+    {% if images is empty %}
+        <p>No images found.</p>
+    {% else %}
+    <ul>
+        {% for image in images%}
+            <li>
+                Variant ID: {{ image.variantId }} <br>
+                <hr>
+                <a href="/images/{{ image.id }}">Edit</a> |
+                <a href="/images/{{ image.id }}/delete">Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    <a href="/images/new">Create New Image</a>
+{% endblock %}
+

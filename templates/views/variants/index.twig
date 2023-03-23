@@ -1,0 +1,24 @@
+{% extends 'layouts/base.twig' %}
+
+{% block title %}All Variants{% endblock %}
+
+{% block main %}
+    <h2>All Variants:</h2>
+
+    {% if variants is empty %}
+        <p>No variants found.</p>
+    {% else %}
+    <ul>
+        {% for variant in variants%}
+            <li>
+                Name: {{ variant.title }} | Price: ${{ variant.price }} -
+                <a href="/variants/{{ variant.id }}">Edit</a>
+                <a href="/variants/{{ variant.id }}/delete">Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    <a href="/variants/new">Create Variant</a>
+{% endblock %}
+

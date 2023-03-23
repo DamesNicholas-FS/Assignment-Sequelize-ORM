@@ -1,0 +1,18 @@
+{% extends 'layouts/base.twig' %}
+
+{% block title %}About{% endblock %}
+
+{% block main %}
+    <h2>About: {{variant.title}}</h2>
+        <ul>
+            <li>
+                <label>id: </label> {{variant.id}} <br />
+                <label>Title: </label> {{variant.title}} <br />
+                <label>Price: $</label> {{variant.price}} <br /> <br />
+                <a href='/variants/{{ variant.id }}/delete'>Delete</a> |
+                <a href='/variants/{{ variant.id }}/edit'>Edit</a>
+            </li>
+        </ul>
+
+        
+{% endblock %}
