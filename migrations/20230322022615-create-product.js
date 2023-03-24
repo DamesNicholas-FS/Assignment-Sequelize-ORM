@@ -12,8 +12,17 @@ module.exports = {
       title: {
         type: Sequelize.STRING
       },
+      slug: {
+        type: Sequelize.STRING
+      },
+      description: {
+        type: Sequelize.TEXT
+      },
       price: {
         type: Sequelize.INTEGER
+      },
+      isPublished: {
+        type: Sequelize.BOOLEAN
       },
       createdAt: {
         allowNull: false,
