@@ -3,18 +3,54 @@
 {% block title %}About{% endblock %}
 
 {% block main %}
-    <h2>About: {{product.title}}</h2>
-        <ul>
-            <li>
-                <label>id: </label> {{product.id}} <br />
-                <label>Title: </label> {{product.title}} <br />
-                <label>Price: $</label> {{product.price}} <br /> <br />
+<div class="m-5">
+    <h1 class="font-semibold text-2xl mb-5">Product Details | {{product.title}} - ID: {{product.id}}</h1>
 
-                <hr>
-                <a href='/products/{{ product.id }}/delete'>Delete</a> |
-                <a href='/products/{{ product.id }}/edit'>Edit</a>
-            </li>
-        </ul>
+    <div class="flex">
+        <label class="pr-3 w-1/6 text-right" for="">Title:</label>
+        <p class="text-left">{{product.title}} </p>
+    </div>
+    <div class="flex">
+        <label class="pr-3 w-1/6 text-right" for="">Slug:</label>
+        <p class="text-left lowercase">{{product.slug}}</p>
+    </div>
+    <div class="flex">
+        <label class="pr-3 w-1/6 text-right" for="">Description:</label>
+        <p class="text-left">{{product.description}} </p>
+    </div>
+    <div class="flex">
+        <label class="pr-3 w-1/6 text-right" for="">Price:</label>
+        <p class="text-left">${{product.price}} </p>
+    </div>
+    <div class="flex">
+        <label class="pr-3 w-1/6 text-right" for="">Is Published:</label>
+        <p class="text-left">{{product.is_published}} </p>
+    </div>
+
+
+    <ul class="flex gap-4 mt-5">
+        <li class=" bg-blue-700 text-white rounded p-0.5 px-5"><a href='/products/{{ product.id }}/edit'>Edit</a></li>
+        <li class=" bg-red-700 text-white rounded p-0.5 px-5"><a href='/products/{{ product.id }}/delete'>Delete</a></li>
+    </ul>
+</div>
+
 
         
 {% endblock %}
+
+
+
+
+
+{# <h2>About: {{product.title}}</h2> ---- KEEPING FOR REFERENCE------------------------------
+    <ul>
+        <li>
+            <label>id: </label> {{product.id}} <br />
+            <label>Title: </label> {{product.title}} <br />
+            <label>Price: $</label> {{product.price}} <br /> <br />
+
+            <hr>
+            <a href='/products/{{ product.id }}/delete'>Delete</a> |
+            <a href='/products/{{ product.id }}/edit'>Edit</a>
+        </li>
+    </ul> #}

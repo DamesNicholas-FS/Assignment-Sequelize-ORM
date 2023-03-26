@@ -4,7 +4,48 @@
         <input type="hidden" name="id" value="{{ product.id }}" />
     {% endif %}
 
-    <div>
+<div class="m-5">
+
+        <div class="flex">
+            <label class="pr-3 w-1/6 text-right" for="title">Title:</label>
+            <input class="border" type="text" placeholder="" name="title" id="title" value="{{ product.title }}">
+        </div>
+
+        <div class="flex">
+            <label class="pr-3 w-1/6 text-right" for="slug">Slug:</label>
+            <input class="border" type="text" placeholder="" name="slug" id="slug" value="{{ product.slug }}">
+        </div>
+
+        <div class="flex">
+            <label class="pr-3 w-1/6 text-right" for="description">Description:</label>
+            <input class="border" type="text" name="description" id="description" value="{{ product.description }}">
+        </div>
+
+        <div class="flex">
+            <label class="pr-3 w-1/6 text-right" for="price">Price:</label>
+            <input class="border" type="text" placeholder="" name="price" id="price" value="{{ product.price }}">
+        </div>
+
+        <div class="flex">
+            <label class="pr-3 w-1/6 text-right" for="">Is Published:</label>
+            <select name="" id="">
+                <option value="true">True</option>
+                <option value="false">False</option>
+            </select>
+        </div>
+
+        <ul class="flex gap-4 mt-5">
+            <input type="submit" value="Save" class=" bg-green-700 text-white rounded p-0.5 px-5">
+            <li class=" bg-red-700 text-white rounded p-0.5 px-5"><a href="/products">Cancel</a></li>
+        </ul>
+        
+    </div>
+
+</form>
+
+
+
+{# <div> --------- KEEPING FOR REFERENCE ----------------------------------------------------
         <label for="title">Name: </label><input type="text" name="title" id="title" placeholder="Name of Product" value="{{ product.title }}"> <br /> <br />
         <label for="title">Slug: </label><input type="text" name="title" id="title" placeholder="Slug Name" value="{{ product.slug }}"> <br /> <br />
         <label for="title">Description: </label><input type="text" name="title" id="title" placeholder="Description" value="{{ product.description }}"> <br /> <br />
@@ -13,5 +54,4 @@
         <label for="title">Product ID: </label><input type="text" name="title" id="title" placeholder="Description" value="{{ product.productId }}"> <br /> <br />
         <br /><br />
         <input type="submit" value="Submit"/>
-    </div>
-</form>
+    </div> #}

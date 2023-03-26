@@ -3,5 +3,6 @@
 {% block title %}Edit{% endblock %}
 
 {% block main %}
+    <h1 class="font-semibold text-2xl m-5">Edit Variant - {{variant.title}}</h1>
     {% include 'views/variants/_form.twig' with { 'variant': variant, 'products': products } %}
 {% endblock %}

@@ -3,7 +3,48 @@
 {% block title %}About{% endblock %}
 
 {% block main %}
-    <h2>About: {{variant.title}}</h2>
+    
+<div class="m-5">
+        <h1 class="font-semibold text-2xl mb-5">Product Details</h1>
+
+    <div class="flex">
+        <label class="pr-3 w-1/6 text-right" for="">Product ID: </label>
+        <p class="text-left">{{variant.id}}</p>
+    </div>
+    <div class="flex">
+        <label class="pr-3 w-1/6 text-right" for="">Title: </label>
+        <p class="text-left lowercase">{{variant.title}}</p>
+    </div>
+    <div class="flex">
+        <label class="pr-3 w-1/6 text-right" for="">Description: </label>
+        <p class="text-left">{{variant.description}}</p>
+    </div>
+    <div class="flex">
+        <label class="pr-3 w-1/6 text-right" for="">Price: </label>
+        <p class="text-left">{{variant.price}}</p>
+    </div>
+    <div class="flex">
+        <label class="pr-3 w-1/6 text-right" for="">Inventory: </label>
+        <p class="text-left">{{variant.inventory}}</p>
+    </div>
+    <div class="flex">
+        <label class="pr-3 w-1/6 text-right" for="">Slug: </label>
+        <p class="text-left">{{variant.slug}}</p>
+    </div>
+    
+
+    <ul class="flex gap-4 mt-5">
+        <li class=" bg-blue-700 text-white rounded p-0.5 px-5"><a href='/variants/{{ variant.id }}/edit'>Edit</a></li>
+        <li class=" bg-red-700 text-white rounded p-0.5 px-5"><a href='/variants/{{ variant.id }}/delete'>Delete</a></li>
+    </ul>
+</div>
+
+        
+{% endblock %}
+
+
+
+{# <h2>About: {{variant.title}}</h2>
         <ul>
             <li>
                 <label>id: </label> {{variant.id}} <br />
@@ -13,7 +54,4 @@
                 <a href='/variants/{{ variant.id }}/delete'>Delete</a> |
                 <a href='/variants/{{ variant.id }}/edit'>Edit</a>
             </li>
-        </ul>
-
-        
-{% endblock %}
+        </ul> #}

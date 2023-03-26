@@ -3,9 +3,30 @@
 {% block title %}All Variants{% endblock %}
 
 {% block main %}
-    <h2>All Variants:</h2>
+    <div class="m-5">
+        <h2>All Variants:</h2>
+        {% if variants is empty %}
+            <p class="my-5">No Variants found.</p>
+        {% else %}
+        {% for variant in variants %}
+            <div class="my-5 border border-gray-300 w-full p-3 rounded-md shadow-md flex justify-between items-center my-2">
+                <p>{{ variant.title }}</p>
+                <ul class="flex gap-4">
+                    <li class=" bg-blue-700 text-white rounded p-0.5 px-5"><a href="/variants/{{ variant.id }}">View / Edit<a></li>
+                    <li class=" bg-red-700 text-white rounded p-0.5 px-5"><a href="/variants/{{ variant.id }}/delete">Delete</a></li>
+                </ul>
+            </div>
 
-    {% if variants is empty %}
+        {% endfor %}
+    
+    {% endif %}
+
+        <a class=" bg-blue-700 text-white rounded p-2 px-5 mt-10" href="/variants/new">Create Variant</a>
+    </div>
+
+{% endblock %}
+
+{# {% if variants is empty %}
         <p>No variants found.</p>
     {% else %}
     <ul>
@@ -17,8 +38,4 @@
             </li>
         {% endfor %}
     </ul>
-    {% endif %}
-
-    <a href="/variants/new">Create Variant</a>
-{% endblock %}
-
+    {% endif %} #}
