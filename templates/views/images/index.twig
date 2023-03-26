@@ -3,23 +3,50 @@
 {% block title %}All Images{% endblock %}
 
 {% block main %}
-    <h2>All Images:</h2>
+    <div class="m-5 my-10">
+        <h2 class="my-3">All Product Images:</h2>
+        {% if images is empty %}
+            <p>No images found.</p>
+        {% else %}
 
-    {% if images is empty %}
-        <p>No images found.</p>
-    {% else %}
-    <ul>
-        {% for image in images%}
-            <li>
-                Image ID: {{ image.id }} <br>
-                <hr>
-                <a href="/images/{{ image.id }}">Edit</a> |
-                <a href="/images/{{ image.id }}/delete">Delete</a>
-            </li>
-        {% endfor %}
-    </ul>
+            {% for image in images %}
+                    <div class="border border-gray-300 w-full p-3 rounded-md shadow-md flex justify-between items-center my-3">
+                        <div class="flex justify-start items-center gap-4 ">
+                            <img src="" alt="" class="border h-12 w-12">
+                            <p> Image ID: {{ image.id }}</p>
+                        </div>
+                        <ul class="flex justify-end">
+                            <li class=" bg-blue-700 text-white rounded p-0.5 px-5 mx-2"><a href="/images/{{ image.id }}">View / Edit</a></li>
+                            <li class=" bg-red-700 text-white rounded p-0.5 px-5 mx-2"><a href="/images/{{ image.id }}/delete">Delete</a></li>
+                        </ul>
+                    </div>
+            {% endfor %}
+            
+            
+        {% endif %}
+
+        <div class="my-10">
+            <a href="/images/new" class="bg-blue-600 text-white rounded p-1 px-5 ">Create New Image</a>
+        </div>
+    </div>
+
+{% endblock %}
+
+{# {% if images is empty %}
+            <p>No images found.</p>
+        {% else %}
+        <ul>
+            {% for image in images%}
+                <li>
+                    Image ID: {{ image.id }} <br>
+                    <hr>
+                    <a href="/images/{{ image.id }}">Edit</a> |
+                    <a href="/images/{{ image.id }}/delete">Delete</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
     {% endif %}
 
     <a href="/images/new">Create New Image</a>
-{% endblock %}
-
+{% endblock %} #}

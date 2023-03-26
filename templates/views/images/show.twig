@@ -3,17 +3,22 @@
 {% block title %}About{% endblock %}
 
 {% block main %}
-    <h2>About Image #: {{image.id}}</h2>
-        <ul>
-            <li>
-                <label>id: </label> {{image.id}} <br />
-                <label>Assigned Variant: </label> {{variant.title}} <br /> <br />
-
-                <hr>
-                <a href='/images/{{ image.id }}/delete'>Delete</a> |
-                <a href='/images/{{ image.id }}/edit'>Edit</a>
-            </li>
-        </ul>
+    <div class="m-5">
+        <h2>About Image #: {{image.id}}</h2>
+            <ul>
+                <li>
+                    <label>id: </label> {{image.id}} <br />
+                    <label>Assigned Variant: </label> {{variant.title}} <br /> <br />
+                    <div class="my-10">
+                        <img class=" border w-16 h-16" src="" alt="">
+                    </div>
+                    <div class="flex gap-4">
+                        <a class=" bg-red-700 text-white rounded p-0.5 px-5" href='/images/{{ image.id }}/delete'>Delete</a>
+                        <a class=" bg-blue-700 text-white rounded p-0.5 px-5" href='/images/{{ image.id }}/edit'>Edit</a>
+                    </div>
+                </li>
+            </ul>
+    </div>
 
         
 {% endblock %}

@@ -4,14 +4,14 @@
         <input type="hidden" name="id" value="{{ image.id }}" />
     {% endif %}
 
-    <div>
+    <div class="m-5">
         <label for="variantId">Variant: </label>
-        <select name="variantId">
+        <select name="variantId" class="border">
             {% for variant in variants %}
                 <option value="{{ variant.id }}">{{ variant.title }}</option>
             {% endfor %}
         </select>
         <br /><br />
-        <input type="submit" value="Submit"/>
+        <input class=" bg-blue-700 text-white rounded p-0.5 px-5" type="submit" value="Submit"/>
     </div>
 </form>
